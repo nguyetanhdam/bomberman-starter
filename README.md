@@ -1,6 +1,5 @@
-# Bài tập lớn OOP - Bomberman Game
+# Bài tập lớn OOP - INT2204 23 - Bomberman Game
 
-INT2204 23
 Thành viên: 
 - Nguyễn Tuấn Hải: 20020133
 - Đàm Nguyệt Ánh: 20020129
