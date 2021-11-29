@@ -196,11 +196,11 @@ public class Sprite {
 		load();
 	}
 	
-	public Sprite(int size, int color) {
+	/*public Sprite(int size, int color) {
 		SIZE = size;
 		_pixels = new int[SIZE * SIZE];
 		setColor(color);
-	}
+	}*/
 	
 	private void setColor(int color) {
 		for (int i = 0; i < _pixels.length; i++) {

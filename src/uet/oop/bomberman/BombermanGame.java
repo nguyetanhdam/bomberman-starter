@@ -1,30 +1,29 @@
 package uet.oop.bomberman;
 
-import javafx.animation.AnimationTimer;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.stage.Stage;
-import uet.oop.bomberman.entities.Bomber;
-import uet.oop.bomberman.entities.Entity;
-import uet.oop.bomberman.entities.Grass;
-import uet.oop.bomberman.entities.Wall;
+import javafx.util.Duration;
+import uet.oop.bomberman.data.GameData;
 import uet.oop.bomberman.graphics.Sprite;
-import uet.oop.bomberman.map.GameMap;
+import uet.oop.bomberman.keyboard_controller.Input;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class BombermanGame extends Application {
 
     public static final int WIDTH = 31;
     public static final int HEIGHT = 13;
-    
+
     private GraphicsContext gc;
     private Canvas canvas;
-
+    private int frame_rendered = 0;
 
 
     public static void main(String[] args) {
@@ -33,6 +32,7 @@ public class BombermanGame extends Application {
 
     @Override
     public void start(Stage stage) {
+
         stage.setTitle("Game Bomberman");
 
         // Tao Canvas
@@ -50,29 +50,41 @@ public class BombermanGame extends Application {
         stage.setScene(scene);
         stage.show();
 
-        GameMap.createMap(1);
-        Entity bomberman = new Bomber(2, 1, Sprite.balloom_left1.getFxImage());
 
-        AnimationTimer timer = new AnimationTimer() {
-            @Override
-            public void handle(long l) {
-                render();
-                bomberman.render(gc);
-                update();
-            }
-        };
-        timer.start();
+        Input.setScene(scene);
 
+        GameData.startGame();
+
+
+        Timeline gameLoop = new Timeline();
+        gameLoop.setCycleCount(Timeline.INDEFINITE);
+        final long timeStart = System.currentTimeMillis();
+        final long[] lastNanoTime = {System.nanoTime()};
+
+
+        KeyFrame kf = new KeyFrame(
+                Duration.seconds(0.017),                // 60 FPS
+                ae -> {
+                    update(frame_rendered);
+                    render(gc);
+                });
+
+        gameLoop.getKeyFrames().add(kf);
+        gameLoop.play();
+
+        stage.show();
 
 
     }
 
 
-    public void update() {
+    public void update(int frame_rendered) {
+        GameData.update(frame_rendered);
     }
 
-    public void render() {
+    public void render(GraphicsContext gc) {
+        frame_rendered++;
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-        GameMap.render(gc);
+        GameData.render(gc);
     }
 }

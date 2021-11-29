@@ -1,36 +1,52 @@
 package uet.oop.bomberman.entities;
 
-import javafx.scene.SnapshotParameters;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
-import uet.oop.bomberman.graphics.Sprite;
+import uet.oop.bomberman.data.Calc;
 
 public abstract class Entity {
-    //Tọa độ X tính từ góc trái trên trong Canvas
-    protected int x;
+    public static int TILE_SIZE = 32;
 
-    //Tọa độ Y tính từ góc trái trên trong Canvas
-    protected int y;
+    protected double pixel_x;
+
+    protected double pixel_y;
 
     protected Image img;
 
-    //Khởi tạo đối tượng, chuyển từ tọa độ đơn vị sang tọa độ trong canvas
-    public Entity( int xUnit, int yUnit, Image img) {
-        this.x = xUnit * Sprite.SCALED_SIZE;
-        this.y = yUnit * Sprite.SCALED_SIZE;
+    public Entity(int tile_x, int tile_y, Image img) {
+        setTileLocation(tile_x, tile_y);
         this.img = img;
     }
 
-    public Entity(int xUnit, int yUnit) {
-        this.x = xUnit * Sprite.SCALED_SIZE;
-        this.y = yUnit * Sprite.SCALED_SIZE;
-        img = null;
+    public void setTileLocation(int tile_x, int tile_y) {
+        this.pixel_x = tile_x * TILE_SIZE;
+        this.pixel_y = tile_y * TILE_SIZE;
+    }
+
+    public void setPixelLocation(double pixel_x, double pixel_y) {
+        this.pixel_x = pixel_x;
+        this.pixel_y = pixel_y;
     }
 
     public void render(GraphicsContext gc) {
-        gc.drawImage(img, x, y);
+        gc.drawImage(img, pixel_x, pixel_y);
     }
-    public abstract void update();
+
+    public abstract void update(int frame_rendered);
+
+    public double getPixelX() {
+        return pixel_x;
+    }
+
+    public int getTileX() {
+        return Calc.pixelToTile(pixel_x);
+    }
+
+    public double getPixelY() {
+        return pixel_y;
+    }
+
+    public int getTileY() {
+        return Calc.pixelToTile(pixel_y);
+    }
 }
