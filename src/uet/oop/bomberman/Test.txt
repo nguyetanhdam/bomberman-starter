@@ -1,0 +1,3 @@
+1 đống bug
+- character đứng trên bom đi được xuyên tường
+- con oneal bị ngu
