@@ -44,5 +44,15 @@ public class Balloon extends Enemy{
         framesDead = balloon_dead;
     }
 
+    @Override
+    public void kill() {
+
+    }
+
+    @Override
+    protected void afterKill() {
+
+    }
+
 
 }

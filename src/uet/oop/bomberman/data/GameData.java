@@ -89,18 +89,14 @@ public class GameData {
                 } else {
                     res[y][x] = 1;
                 }
-
-
             }
         }
-
         return res;
     }
 
     public static int getMapWidth() {
         return Level.getWidth();
     }
-
 
     public static int getMapHeight() {
         return Level.getHeight();
@@ -140,7 +136,6 @@ public class GameData {
         for (Enemy e : game_enemies) {
             e.render(gc);
         }
-
         player.render(gc);
     }
 }

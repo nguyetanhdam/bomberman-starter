@@ -207,4 +207,14 @@ public class Player extends GameCharacter {
         }
         return true;
     }
+
+    @Override
+    public void kill() {
+
+    }
+
+    @Override
+    protected void afterKill() {
+
+    }
 }

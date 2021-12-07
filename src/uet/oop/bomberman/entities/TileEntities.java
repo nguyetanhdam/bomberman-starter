@@ -62,6 +62,4 @@ public class TileEntities extends Entity {
     public Entity getEntity() {
         return entities.get(entities.size() - 1);
     }
-
-
 }

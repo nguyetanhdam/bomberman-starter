@@ -1,11 +1,8 @@
 package uet.oop.bomberman.character.enemy;
 
 import javafx.scene.image.Image;
-import uet.oop.bomberman.character.enemy.AI.AIHigh;
 import uet.oop.bomberman.data.GameData;
 import uet.oop.bomberman.graphics.Sprite;
-
-import java.util.Random;
 
 public class Oneal extends Enemy {
     public static Image[] left;
@@ -33,37 +30,20 @@ public class Oneal extends Enemy {
     public Oneal(int x, int y) {
         super(x, y, left[0]);
         speed = ONEAL_SPEED;
-        ai = new AIHigh(GameData.getPlayer(), this);
         createFramesInfo();
     }
 
     public void update(int frame_rendered) {
-        if (is_alive) {
 
-            if (!((AIHigh) ai).inTheDes() && canMove()) {        //nếu có nước đi
-                if (((AIHigh) ai).checkPos(pixel_x, pixel_y)) {
-                    setStatusMove(((AIHigh) ai).getNextDir());
-                }
-            } else {
+    }
 
-                ((AIHigh) ai).createWay();
+    @Override
+    public void kill() {
 
-                if (!((AIHigh) ai).canSolve()) {    //không thể tìm thấy nước đi
-                    setStatusMove(5);
-                }
-            }
-            if (canMove() && isRunning) {
-                pixel_x += velocityX;
-                pixel_y += velocityY;
-            } else {
-                System.out.println(pixel_x + "-" + velocityX + "," + pixel_y + "-" + velocityY);
-            }
-        } else {
-            dead_duration++;
-            if (dead_duration == DEAD_TIME) is_removed = true;
-        }
+    }
 
-        this.img = getFrame(frame_rendered);
+    @Override
+    protected void afterKill() {
 
     }
 

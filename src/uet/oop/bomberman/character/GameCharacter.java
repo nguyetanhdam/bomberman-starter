@@ -135,4 +135,14 @@ public abstract class GameCharacter extends Entity {
 
         return true;
     }
+
+    /**
+     * Được gọi khi đối tượng bị tiêu diệt
+     */
+    public abstract void kill();
+
+    /**
+     * Xử lý hiệu ứng bị tiêu diệt
+     */
+    protected abstract void afterKill();
 }

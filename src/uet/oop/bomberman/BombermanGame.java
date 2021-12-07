@@ -3,8 +3,6 @@ package uet.oop.bomberman;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -15,7 +13,6 @@ import uet.oop.bomberman.data.GameData;
 import uet.oop.bomberman.graphics.Sprite;
 import uet.oop.bomberman.keyboard_controller.Input;
 
-
 public class BombermanGame extends Application {
 
     public static final int WIDTH = 31;
@@ -24,7 +21,6 @@ public class BombermanGame extends Application {
     private GraphicsContext gc;
     private Canvas canvas;
     private int frame_rendered = 0;
-
 
     public static void main(String[] args) {
         Application.launch(BombermanGame.class);
@@ -50,17 +46,14 @@ public class BombermanGame extends Application {
         stage.setScene(scene);
         stage.show();
 
-
         Input.setScene(scene);
 
         GameData.startGame();
-
 
         Timeline gameLoop = new Timeline();
         gameLoop.setCycleCount(Timeline.INDEFINITE);
         final long timeStart = System.currentTimeMillis();
         final long[] lastNanoTime = {System.nanoTime()};
-
 
         KeyFrame kf = new KeyFrame(
                 Duration.seconds(0.017),                // 60 FPS
@@ -73,10 +66,7 @@ public class BombermanGame extends Application {
         gameLoop.play();
 
         stage.show();
-
-
     }
-
 
     public void update(int frame_rendered) {
         GameData.update(frame_rendered);
