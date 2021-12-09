@@ -37,7 +37,7 @@ public class Bomb extends AnimatedTile {
     @Override
     public void update(int frame_rendered) {
         animated_time--;
-        if (animated_time == 0) is_explored = true;
+        if (animated_time <= 0) is_explored = true;
         if (is_explored && !flame_showed) {
             addFlameTiles();
             flame_showed = true;
@@ -95,11 +95,11 @@ public class Bomb extends AnimatedTile {
                 ((Bomb) e).explore();
             }
 
-            if (_y == middle_y - length) {
-                GameData.addEntity(new FlameSegment(middle_x, _y, FlameSegment.FlameType.END_UP));
-            } else {
-                GameData.addEntity(new FlameSegment(middle_x, _y, FlameSegment.FlameType.VERTICAL));
-            }
+//            if (_y == middle_y - length) {
+//                GameData.addEntity(new FlameSegment(middle_x, _y, FlameSegment.FlameType.END_UP));
+//            } else {
+//                GameData.addEntity(new FlameSegment(middle_x, _y, FlameSegment.FlameType.VERTICAL));
+//            }
         }
 
 
@@ -118,11 +118,11 @@ public class Bomb extends AnimatedTile {
                 ((Bomb) e).explore();
             }
 
-            if (_y == middle_y + length) {
-                GameData.addEntity(new FlameSegment(middle_x, _y, FlameSegment.FlameType.END_DOWN));
-            } else {
-                GameData.addEntity(new FlameSegment(middle_x, _y, FlameSegment.FlameType.VERTICAL));
-            }
+//            if (_y == middle_y + length) {
+//                GameData.addEntity(new FlameSegment(middle_x, _y, FlameSegment.FlameType.END_DOWN));
+//            } else {
+//                GameData.addEntity(new FlameSegment(middle_x, _y, FlameSegment.FlameType.VERTICAL));
+//            }
         }
 
         //left frames
@@ -140,11 +140,11 @@ public class Bomb extends AnimatedTile {
                 ((Bomb) e).explore();
             }
 
-            if (_x == middle_x - length) {
-                GameData.addEntity(new FlameSegment(_x, middle_y, FlameSegment.FlameType.END_LEFT));
-            } else {
-                GameData.addEntity(new FlameSegment(_x, middle_y, FlameSegment.FlameType.HORIZONTAL));
-            }
+//            if (_x == middle_x - length) {
+//                GameData.addEntity(new FlameSegment(_x, middle_y, FlameSegment.FlameType.END_LEFT));
+//            } else {
+//                GameData.addEntity(new FlameSegment(_x, middle_y, FlameSegment.FlameType.HORIZONTAL));
+//            }
         }
 
         //right frames
@@ -162,11 +162,11 @@ public class Bomb extends AnimatedTile {
                 ((Bomb) e).explore();
             }
 
-            if (_x == middle_x + length) {
-                GameData.addEntity(new FlameSegment(_x, middle_y, FlameSegment.FlameType.END_RIGHT));
-            } else {
-                GameData.addEntity(new FlameSegment(_x, middle_y, FlameSegment.FlameType.HORIZONTAL));
-            }
+//            if (_x == middle_x + length) {
+//                GameData.addEntity(new FlameSegment(_x, middle_y, FlameSegment.FlameType.END_RIGHT));
+//            } else {
+//                GameData.addEntity(new FlameSegment(_x, middle_y, FlameSegment.FlameType.HORIZONTAL));
+//            }
         }
     }
 

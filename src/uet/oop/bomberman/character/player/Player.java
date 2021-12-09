@@ -100,9 +100,11 @@ public class Player extends GameCharacter {
     }
 
     private void removeExplodedBomb() {
-        for (Bomb b : bombList) {
+        for (int i = 0; i < bombList.size(); i++) {
+            Bomb b = bombList.get(i);
             if (b.canRemove()) {
                 bombList.remove(b);
+                i--;
             }
         }
     }

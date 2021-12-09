@@ -94,6 +94,8 @@ public class FlameSegment extends AnimatedTile {
 
 
     public void update(int frame_rendered) {
+        if(is_removed)
+            return;
         animated_time++;
         if(animated_time >= FLAME_DURATION) is_removed = true;
         this.img = getFrame(frame_rendered);

@@ -21,38 +21,48 @@ public class TileEntities extends Entity {
     }
 
     public void removeDeletedEntity() {
-        for(Entity e: entities) {
-            if(e instanceof FlameSegment) {
-                if(((FlameSegment) e).isRemoved()) entities.remove(e);
-            }
-            else if(e instanceof Bomb)
-            {
-                if(((Bomb) e).canRemove()) {
+        for(int i = 0; i < entities.size(); i++) {
+            Entity e = entities.get(i);
+            if (e instanceof FlameSegment) {
+                if (((FlameSegment) e).isRemoved()) {
                     entities.remove(e);
+                    i--;
                 }
-            }
-            else if (e instanceof Brick)
-            {
-                if(((Brick) e).isRemoved()) entities.remove(e);
-            }
-            else if(e instanceof Item) {
-                if(((Item) e).isRemoved()) entities.remove(e);
+            } else if (e instanceof Bomb) {
+                if (((Bomb) e).canRemove()) {
+                    entities.remove(e);
+                    i--;
+                }
+            } else if (e instanceof Brick) {
+                if (((Brick) e).isRemoved()) {
+                    entities.remove(e);
+                    i--;
+                }
+            } else if (e instanceof Item) {
+                if (((Item) e).isRemoved()) {
+                    entities.remove(e);
+                    i--;
+                }
             }
         }
     }
 
+
     @Override
     public void update(int frame_rendered) {
         removeDeletedEntity();
+
         for (Entity e : entities) {
             e.update(frame_rendered);
         }
+
     }
 
     public void render(GraphicsContext gc) {
         for (Entity e : entities) {
             e.render(gc);
         }
+
     }
 
     public void addEntity(Entity e) {

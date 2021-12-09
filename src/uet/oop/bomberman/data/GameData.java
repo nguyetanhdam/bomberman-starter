@@ -46,9 +46,10 @@ public class GameData {
         int y = e.getTileY();
 
         if (x >= 0 && x < getMapWidth()
-                && y >= 0 && y < getMapHeight()) {
+                && y >= 0 && y < getMapHeight() ) {
             mapObject.get(x + y * getMapWidth()).addEntity(e);
         }
+
     }
 
 

@@ -38,11 +38,12 @@ public class Brick extends AnimatedTile {
     }
 
     public Image getImage() {
-        int index = animation_time * frames.length / broken_duration;
+        int index = (animation_time * frames.length / broken_duration)% frames.length;
         return frames[index];
     }
 
     public void broken() {
+        System.out.println(1);
         is_broken = true;
     }
 
