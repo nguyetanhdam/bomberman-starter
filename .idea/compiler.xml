@@ -6,10 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="bomberman" />
-        <module name="btl OOP" />
         <module name="BomberMan" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="BomberMan" target="16" />
+    </bytecodeTargetLevel>
   </component>
 </project>

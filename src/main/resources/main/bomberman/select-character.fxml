@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1344.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.bomberman.gui.SelectCharacter">
+   <children>
+      <ImageView fitHeight="924.0" fitWidth="1347.0" layoutX="1.0" layoutY="-152.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/backgroundname.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="262.0" fitWidth="1010.0" layoutX="152.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/slogan2.png" />
+         </image>
+      </ImageView>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="309.0" layoutY="528.0" mnemonicParsing="false" onAction="#selectFirst" prefHeight="133.0" prefWidth="113.0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="138.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../Image/gj1.gif" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button layoutX="594.0" layoutY="520.0" mnemonicParsing="false" onAction="#selectSecond" prefHeight="143.0" prefWidth="126.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="110.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../Image/gj2.gif" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button layoutX="873.0" layoutY="524.0" mnemonicParsing="false" onAction="#selectThird" prefHeight="135.0" prefWidth="126.0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="104.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../Image/gj3.gif" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <ImageView blendMode="ADD" fitHeight="212.0" fitWidth="271.0" layoutX="45.0" layoutY="534.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/ezgif-7-ede12dace560.gif" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="353.0" layoutY="73.0" prefHeight="82.0" prefWidth="614.0" text="SELECT MODE &amp; CHARACTER" textFill="#691ca1">
+         <font>
+            <Font name="Comic Sans MS Bold" size="41.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="218.0" fitWidth="204.0" layoutX="39.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/AmusedBonyHellbender-size_restricted.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="209.0" fitWidth="220.0" layoutX="999.0" layoutY="528.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/dbd1iho-9d3d82f8-076e-4f6b-96da-cb16107203f0.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="228.0" fitWidth="183.0" layoutX="1095.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/d6zdunl-f2d82c86-6c13-43aa-9c0a-90de97689b96.gif" />
+         </image>
+      </ImageView>
+      <CheckBox fx:id="normalMode" layoutX="181.0" layoutY="324.0" mnemonicParsing="false" onAction="#selectNormalMode" prefHeight="121.0" prefWidth="228.0" textFill="RED">
+         <graphic>
+            <ImageView fitHeight="130.0" fitWidth="200.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Image/normalMode.png" />
+               </image>
+            </ImageView>
+         </graphic></CheckBox>
+      <CheckBox fx:id="specialMode" layoutX="543.0" layoutY="325.0" mnemonicParsing="false" onAction="#selectSpecialMode" prefHeight="127.0" prefWidth="228.0" textFill="RED">
+         <graphic>
+            <ImageView fitHeight="130.0" fitWidth="200.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Image/gloves.png" />
+               </image>
+            </ImageView>
+         </graphic></CheckBox>
+      <CheckBox fx:id="AIMode" layoutX="865.0" layoutY="325.0" mnemonicParsing="false" onAction="#selectAIMode" prefHeight="127.0" prefWidth="220.0" textFill="RED">
+         <graphic>
+            <ImageView fitHeight="130.0" fitWidth="200.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../Image/aimode.png" />
+               </image>
+            </ImageView>
+         </graphic></CheckBox>
+   </children>
+</AnchorPane>
