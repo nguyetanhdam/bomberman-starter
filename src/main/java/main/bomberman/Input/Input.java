@@ -9,16 +9,17 @@ import java.util.Stack;
 public class Input {
     private static Scene theScene;
     private static Stack<String> listInput = new Stack<>();
-    private int no = 1;
-    private static int mode = 1;
-    public Input(int no){
-        this.no = no;
+    private static Input input = new Input();
+    private Input(){
+    }
+
+    public static Input getInput() {
+        return input;
     }
 
 
-    public static void setScene(Scene scene, int md){
+    public static void setScene(Scene scene){
         theScene = scene;
-        mode = md;
         listInput.clear();
         theScene.setOnKeyPressed(
                 new EventHandler<javafx.scene.input.KeyEvent>() {
@@ -50,64 +51,33 @@ public class Input {
     public boolean right(){
         if (listInput.size() < 1)
             return false;
-        if(mode == 1){
-            return listInput.peek().equals("RIGHT");
-        }
-        else {
-            if (no == 1) {
-                return listInput.contains("D");
-            } else {
-                //return listInput.peek().equals("RIGHT");
-                return listInput.contains("RIGHT");
-            }
-        }
+
+        return listInput.peek().equals("RIGHT");
     }
     public boolean left(){
         if(listInput.size() < 1)
             return false;
-        if(mode == 1) {
-            return listInput.peek().equals("LEFT");
-        }
-        else{
-            if (no == 1) {
-                return listInput.contains("A");
-            } else
-                return listInput.contains("LEFT");
-        }
+
+        return listInput.peek().equals("LEFT");
     }
     public boolean up(){
         if(listInput.size() < 1)
             return false;
-        if(mode == 1){
-            return listInput.peek().equals("UP");
-        }
-        else {
-            if (no == 1) {
-                return listInput.contains("W");
-            } else
-                return listInput.contains("UP");
-        }
+        return listInput.peek().equals("UP");
+
     }
     public boolean down(){
         if(listInput.size() < 1)
             return false;
-        if(mode == 1){
-            return listInput.peek().equals("DOWN");
-        }
-        else {
-            if (no == 1) {
-                return listInput.contains("S");
-            } else
-                return listInput.contains("DOWN");
-        }
+
+        return listInput.peek().equals("DOWN");
+
     }
     public boolean placeBomb(){
         if(listInput.size() < 1)
             return false;
-        if(no == 1)
-            return listInput.peek().equals("SPACE"); //input.contains("SPACE") || input.contains("ENTER");
-        else
-            return listInput.peek().equals("ENTER");
+
+        return listInput.peek().equals("SPACE"); //input.contains("SPACE") || input.contains("ENTER");
     }
 
     public static boolean quit(){

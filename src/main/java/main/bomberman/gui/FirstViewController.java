@@ -21,11 +21,14 @@ public class FirstViewController implements Initializable {
         btnMsic.setText(Sound.getMode());
     }
 
+    /**
+     * nút start
+     * */
     public void start(ActionEvent event) {
         try {
             Sound.playSound(Sound.placeBomb);
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(BombermanGame.class.getResource("select-number-player.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(BombermanGame.class.getResource("get-name.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setScene(scene);
         } catch (IOException e) {
@@ -33,6 +36,9 @@ public class FirstViewController implements Initializable {
         }
     }
 
+    /**
+     * nút highscore
+     * */
     public void viewScore(ActionEvent event) {
         try {
             Sound.playSound(Sound.placeBomb);
@@ -45,12 +51,16 @@ public class FirstViewController implements Initializable {
         }
     }
 
+    /**
+     * nút exit*/
     public void exit(ActionEvent event) {
         Sound.playSound(Sound.placeBomb);
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * nút âm lượng*/
     public void sound(ActionEvent event) {
         Sound.mute();
         btnMsic.setText(Sound.getMode());

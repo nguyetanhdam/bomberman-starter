@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1344.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.bomberman.gui.IntroViewController">
+   <children>
+      <ImageView fitHeight="726.0" fitWidth="1405.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/background_intro.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="87.0" fitWidth="292.0" layoutX="561.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/UI___UIX_elements_for_videogames.png-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="585.0" layoutY="648.0" mnemonicParsing="false" onAction="#exit" prefHeight="46.0" prefWidth="196.0" text="EXIT">
+         <font>
+            <Font name="Algerian" size="26.0" />
+         </font></Button>
+      <ImageView fitHeight="88.0" fitWidth="529.0" layoutX="450.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/textbox_intro.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="257.0" layoutX="524.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/text_intro.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="487.0" fitWidth="900.0" layoutX="257.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/intro.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="194.0" fitWidth="196.0" layoutX="1141.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/dbd1iho-9d3d82f8-076e-4f6b-96da-cb16107203f0.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="158.0" fitWidth="150.0" layoutX="60.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/images__2_-removebg-preview.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

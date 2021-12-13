@@ -9,7 +9,7 @@ import main.bomberman.entities.tile.Wall;
 
 abstract public class AnimatedImage extends Entity {
     public Image[] frames;
-    protected double duration = 0.10;
+    protected double duration = 0.10;   //thời gian 1 frame
     protected double velocityX;
     protected double velocityY;
     protected double speed;

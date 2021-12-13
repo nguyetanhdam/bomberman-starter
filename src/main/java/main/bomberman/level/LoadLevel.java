@@ -1,7 +1,7 @@
 package main.bomberman.level;
 
 import main.bomberman.entities.Entity;
-import main.bomberman.entities.character.enermy.*;
+import main.bomberman.entities.character.enemy.*;
 import main.bomberman.entities.tile.Brick;
 import main.bomberman.entities.tile.Grass;
 import main.bomberman.entities.tile.Wall;

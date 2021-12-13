@@ -91,6 +91,10 @@ abstract public class AnimatedCharacter extends Entity {
         if(isRunning)
             this.statusMove = statusMove;
     }
+
+    /**
+     * cập nhật lại vị trí character
+     * */
     public void update(double time) {
         if(!alive)
             return;

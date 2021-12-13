@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1344.0" stylesheets="@button.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.bomberman.gui.FirstViewController">
+   <children>
+      <ImageView fitHeight="730.0" fitWidth="1347.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../Image/startviewbg.png" />
+         </image>
+      </ImageView>
+      <ImageView blendMode="SCREEN" cache="true" fitHeight="239.0" fitWidth="277.0" layoutX="752.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/ezgif-7-ede12dace560.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="423.0" fitWidth="263.0" layoutX="8.0" layoutY="485.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/waitborberman.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="242.0" fitWidth="194.0" layoutX="1151.0" layoutY="453.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/kisspng-super-bomberman-r-big-boss-solid-snake-metal-gear-super-bomberman-r-images-amp-screenshots-gameg-5c731206cc9623.104853141551045126838-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="185.0" fitWidth="181.0" layoutX="590.0" layoutY="542.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/kisspng-clip-art-drawing-super-smash-bros-ultimate-devian-5ca86f0d896d23.1222481115545423495629-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="281.0" fitWidth="225.0" layoutX="34.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/png-transparent-super-bomberman-r-bomberman-blast-nintendo-switch-video-game-others-game-balloon-nintendo-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="128.0" fitWidth="314.0" layoutX="259.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/UI___UIX_elements_for_videogames.png-removebg-preview.png" />
+         </image></ImageView>
+      <ImageView fitHeight="112.0" fitWidth="314.0" layoutX="259.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/UI___UIX_elements_for_videogames.png-removebg-preview.png" />
+         </image></ImageView>
+      <ImageView fitHeight="112.0" fitWidth="314.0" layoutX="259.0" layoutY="612.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/UI___UIX_elements_for_videogames.png-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="112.0" fitWidth="314.0" layoutX="259.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/UI___UIX_elements_for_videogames.png-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="290.0" layoutY="370.0" mnemonicParsing="false" onAction="#start" prefHeight="54.0" prefWidth="250.0" text="Start">
+         <font>
+            <Font name="Algerian" size="28.0" />
+         </font></Button>
+      <Button layoutX="289.0" layoutY="471.0" mnemonicParsing="false" onAction="#viewScore" prefHeight="54.0" prefWidth="251.0" text="Hight Score">
+         <font>
+            <Font name="Algerian" size="25.0" />
+         </font></Button>
+      <Button layoutX="289.0" layoutY="636.0" mnemonicParsing="false" onAction="#exit" prefHeight="54.0" prefWidth="251.0" text="Exit">
+         <font>
+            <Font name="Algerian" size="25.0" />
+         </font></Button>
+      <Button alignment="CENTER" contentDisplay="TOP" layoutX="1225.0" layoutY="13.0" mnemonicParsing="false" onAction="#sound" prefHeight="126.0" prefWidth="108.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="82.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/audio.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Label fx:id="btnMsic" alignment="CENTER" contentDisplay="CENTER" layoutX="1260.0" layoutY="99.0" prefHeight="27.0" prefWidth="40.0" text="ON">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="291.0" layoutY="553.0" mnemonicParsing="false" onAction="#introBtn" prefHeight="54.0" prefWidth="251.0" text="Intro">
+         <font>
+            <Font name="Algerian" size="25.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

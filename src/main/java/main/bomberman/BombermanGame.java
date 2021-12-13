@@ -14,7 +14,7 @@ public class BombermanGame extends Application {
 
     @Override
     public void start(Stage theStage) throws IOException {
-        theStage.setTitle("BomberMan Game");
+        theStage.setTitle("BomberMan");
         Sound.load();
         Sound.playMusicInGame();
         FXMLLoader fxmlLoader = new FXMLLoader(BombermanGame.class.getResource("first-view.fxml"));
