@@ -43,7 +43,7 @@ public class ScoreView implements Initializable {
             con = DriverManager.getConnection(url, "root", "");
             statement = con.createStatement();
 
-            ResultSet rs = statement.executeQuery("select * from rank order by score desc");
+            ResultSet rs = statement.executeQuery("SELECT * FROM rank GROUP BY name ORDER BY score DESC LIMIT 5\n");
             ArrayList<String> lName = new ArrayList<>();
             ArrayList<String> lScore = new ArrayList<>();
             while(rs.next()){
